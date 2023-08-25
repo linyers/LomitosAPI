@@ -6,7 +6,7 @@ import os
 User = get_user_model()
 
 
-def lomito_directory_path(instance):
+def lomito_directory_path(instance, filename):
     logo = 'lomitos/{0}/logo.jpg'.format(instance.name)
     full_path = os.path.join(settings.MEDIA_ROOT, logo)
 
