@@ -1,6 +1,7 @@
 import re
 from rest_framework.serializers import ValidationError
 
+
 def CustomValidations(data):
     rating_data = data.get('rating')
     if rating_data:
@@ -23,6 +24,7 @@ def RatingValidator(rating):
         if rating['rate'] > 5 or rating['rate'] < 1:
             raise ValidationError({'rate': 'Rate must be between 1 and 5'})
 
+
 def TimeValidator(day, time, period):
     pattern = r'^\d{2}:\d{2}-\d{2}:\d{2}$'
 
@@ -36,6 +38,3 @@ def TimeValidator(day, time, period):
 
     if not (0 <= start_minutes <= 59) or not (0 <= end_minutes <= 59):
         raise ValidationError({period: f'{period} minutes must be between 0 and 59'})
-
-    # if start_hours > end_hours or (start_hours == end_hours and start_minutes >= end_minutes):
-    #     raise ValidationError({period: f'{period} must be respect the format 00:00-00:00'})

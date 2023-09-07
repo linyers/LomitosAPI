@@ -21,9 +21,22 @@ class LomitosViewSet(CustomModelViewSet):
     queryset = Lomito.objects.all()
     pagination_class = CustomPagination
 
+    # TODO def retrieve(self, request, pk=None):
+    #     queryset = Lomito.objects.all()
+    #     lomito = get_object_or_404(queryset, pk=pk)
+    #     serializer = LomitoSerializer(lomito)
+    #     return Response(serializer.data)
+    
+    # TODO def update(self, request, *args, **kwargs):
+    #     return super().update(request, *args, **kwargs)
+
     def get_queryset(self):
         params = self.request.query_params
-        params_copy = dict(params.copy())
+
+        if not params:
+            return super().get_queryset()
+        
+        params_copy = dict(**params)
 
         queryset = set()
 

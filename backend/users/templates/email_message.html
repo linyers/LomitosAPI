@@ -1,7 +1,7 @@
 {% autoescape off %}
 Hi {{ user.email }},
 
-Please click on the link below to confirm your registration:
+Please click on the link below to {{ msg }}
 
-{{ protocol }}://{{ domain }}{% url 'users:activate' uidb64=uid token=token %}
+{{ protocol }}://{{ domain }}{% url view uidb64=uid token=token %}
 {% endautoescape %}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function IntroductionPage() {
   return (
-    <div>
+    <main>
       <h2 className="font-bold text-6xl mb-8">Introduccion</h2>
 
       <p className="text-lg">
@@ -22,6 +22,6 @@ export default function IntroductionPage() {
         <li>🚬 Operaciones CRUD</li>
         <li>📄 Archivos de Postman</li>
       </ul>
-    </div>
+    </main>
   );
 }

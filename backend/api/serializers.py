@@ -43,7 +43,6 @@ class LomitoSerializer(serializers.ModelSerializer):
         night_time_data = validated_data.pop('night_time')
         night_time = NightTime.objects.create(**night_time_data)
 
-        print(validated_data)
         user = self.context['request'].user
         lomito, created = Lomito.objects.update_or_create(rating=rating, day_time=day_time, night_time=night_time, user=user,**validated_data)
 

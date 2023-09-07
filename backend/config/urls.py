@@ -15,13 +15,16 @@ def get_routes(request):
     
     return Response(routes)
 
+adminpath = 'admin/'
+if not settings.DEBUG:
+    adminpath = settings.ADMIN_URL
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path(adminpath, admin.site.urls),
     path("api/", get_routes, name="routes"),
     path('api/', include('api.urls', namespace='api')),
     path('api/auth/', include('users.urls', namespace='users'))
 ]
-
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
