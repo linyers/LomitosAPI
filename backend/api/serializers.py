@@ -34,13 +34,23 @@ class LomitoSerializer(serializers.ModelSerializer):
         return data
 
     def create(self, validated_data):
-        rating_data = validated_data.pop('rating')
+        default_time = {
+        "sunday": None,
+        "monday": None,
+        "tuesday": None,
+        "wednesday": None,
+        "thursday": None,
+        "friday": None,
+        "saturday": None
+        }
+        default_rating = {"rate": None, "reviews": None}
+
+        rating_data = validated_data.pop('rating', default_rating)
+        day_time_data = validated_data.pop('day_time', default_time)
+        night_time_data = validated_data.pop('night_time', default_time)
+
         rating = Rating.objects.create(**rating_data)
-
-        day_time_data = validated_data.pop('day_time')
         day_time = DayTime.objects.create(**day_time_data)
-
-        night_time_data = validated_data.pop('night_time')
         night_time = NightTime.objects.create(**night_time_data)
 
         user = self.context['request'].user
@@ -60,7 +70,6 @@ class LomitoSerializer(serializers.ModelSerializer):
             DayTime.objects.filter(pk=instance.day_time.pk).update(**day_time_data)
             day_time = DayTime.objects.get(pk=instance.day_time.pk)
             instance.day_time = day_time
-
 
         if validated_data.get('night_time'):
             night_time_data = validated_data.pop('night_time')

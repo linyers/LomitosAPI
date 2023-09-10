@@ -50,3 +50,6 @@ class Lomito(models.Model):
     day_time = models.OneToOneField(DayTime, on_delete=models.CASCADE,blank=True, null=True)
     night_time = models.OneToOneField(NightTime, on_delete=models.CASCADE,blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return self.name

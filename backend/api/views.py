@@ -1,5 +1,7 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
 
 from .models import Lomito, Rating, DayTime, NightTime
 from .serializers import LomitoSerializer
@@ -63,3 +65,34 @@ class LomitosViewSet(CustomModelViewSet):
             queryset = queryset.union(Lomito.objects.filter(rating=d, day_time=d, night_time=d, **params_copy))
 
         return list(queryset)
+
+
+@api_view(['POST'])
+@permission_classes([IsAdminUser])
+def lomito_base(request):
+    rating = list()
+    day_time = list()
+    night_time = list()
+    lomito = list()
+
+    for d in request.data:
+        rating.append(d['rating'])
+        day_time.append(d['day_time'])
+        night_time.append(d['night_time'])
+        lomito.append({'name':d['name'], 'phone':d['phone'], 'maps':d['maps'], 'logo':d['logo']})
+
+    Rating.objects.bulk_create([Rating(**r) for r in rating])
+    DayTime.objects.bulk_create([DayTime(**d) for d in day_time])
+    NightTime.objects.bulk_create([NightTime(**n) for n in night_time])
+
+    rating = Rating.objects.all()
+    day_time = DayTime.objects.all()
+    night_time = NightTime.objects.all()
+
+    lomitos = [
+        Lomito(rating=r, day_time=d, night_time=n, user=request.user,**l) for l, r, d, n in zip(lomito, rating, day_time, night_time)
+    ]
+
+    Lomito.objects.bulk_create(lomitos)
+
+    return Response({'success': 'created lomitos'})
