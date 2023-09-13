@@ -6,6 +6,9 @@ import SideBarRight from "./components/SideBarRight";
 
 import IntroductionPage from "./pages/IntroductionPage";
 import LomitosPage from "./pages/LomitosPage";
+import QueryPage from "./pages/QueryPage";
+import AuthPage from "./pages/AuthPage";
+import PostmanPage from "./pages/PostmanPage";
 
 function App() {
   return (
@@ -18,12 +21,15 @@ function App() {
           <div className="w-1/4">
             <SideBarLeft />
           </div>
-          <div className="w-1/2">
+          <main className="w-1/2 flex flex-col">
             <Routes>
               <Route path="/" element={<IntroductionPage />} />
               <Route path="/lomitos" element={<LomitosPage />} />
+              <Route path="/querys" element={<QueryPage />} />
+              <Route path="/authentication" element={<AuthPage />} />
+              <Route path="/postman" element={<PostmanPage />} />
             </Routes>
-          </div>
+          </main>
           <div className="w-1/4 relative">
             <SideBarRight />
           </div>

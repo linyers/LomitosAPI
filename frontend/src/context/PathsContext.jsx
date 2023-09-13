@@ -21,12 +21,8 @@ export function PathsProvider({ children }) {
       path: "/querys",
     },
     {
-      name: "Auth JWT",
-      path: "/authjwt",
-    },
-    {
-      name: "Users",
-      path: "/users",
+      name: "Authentication",
+      path: "/authentication",
     },
   ];
 

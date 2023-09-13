@@ -19,13 +19,15 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 @api_view(['GET'])
 def get_routes(request):
-    site = 'https://' if request.is_secure() else 'http://' + get_current_site(request).domain
+    site = 'https://' if request.is_secure() else 'http://' + request.get_host
 
     routes = {
         'Signup': f'{site}/api/auth/signup/',
         'Login': f'{site}/api/auth/login/',
+        'Change Password': f'{site}/api/auth/change-password/',
         'User info': f'{site}/api/auth/user/',
-        'Refresh token': f'{site}/api/auth/token/refresh/'}
+        'Refresh token': f'{site}/api/auth/token/refresh/',
+    }
 
     return Response(routes)
 

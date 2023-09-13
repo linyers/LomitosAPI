@@ -5,7 +5,7 @@ import PathsContext from "../context/PathsContext";
 export default function SideBarRight() {
   const { actualPath, pageNav } = useContext(PathsContext);
 
-  if (actualPath === "/") {
+  if (actualPath === "/" || actualPath === "/postman") {
     return (
       <div className="mt-7 fixed right-14">
         <h3 className="text-xl font-bold">
