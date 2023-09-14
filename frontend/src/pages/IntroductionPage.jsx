@@ -1,7 +1,15 @@
-import React from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import PathsContext from "../context/PathsContext";
 
 export default function IntroductionPage() {
+  const { setActualPath, setPageNav } = useContext(PathsContext);
+
+  useEffect(() => {
+    setPageNav([]);
+  }, []);
+
+
   return (
     <>
       <h2 className="font-bold text-6xl mb-8">Introduccion</h2>
@@ -11,7 +19,11 @@ export default function IntroductionPage() {
         Estero. Lomitos API puede ser utilizado para cualquier tipo de proyecto
         y se puede contribuir añadiendo nuevas lomiterias. Para poder agregar
         nuevas lomiterias necesitara un{" "}
-        <Link className="text-blue-400 hover:text-blue-500" to="/users">
+        <Link
+          onClick={(e) => setActualPath('/authentication')}
+          className="text-blue-400 hover:text-blue-500"
+          to="/authentication"
+        >
           usuario
         </Link>
         .

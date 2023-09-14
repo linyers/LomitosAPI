@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 const PathsContext = createContext();
 export default PathsContext;
@@ -6,6 +6,12 @@ export default PathsContext;
 export function PathsProvider({ children }) {
   const [actualPath, setActualPath] = useState(window.location.pathname);
   const [pageNav, setPageNav] = useState([]);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setActualPath(window.location.pathname)
+  }, [window.location.pathname])
+
 
   const paths = [
     {
@@ -29,9 +35,11 @@ export function PathsProvider({ children }) {
   let contextData = {
     paths: paths,
     actualPath: actualPath,
-    setactualPath: setActualPath,
+    setActualPath: setActualPath,
     setPageNav: setPageNav,
     pageNav: pageNav,
+    open, 
+    setOpen
   };
 
   return (

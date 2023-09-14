@@ -1,4 +1,3 @@
-import React from "react";
 import { useContext } from "react";
 import PathsContext from "../context/PathsContext";
 
@@ -7,7 +6,7 @@ export default function SideBarRight() {
 
   if (actualPath === "/" || actualPath === "/postman") {
     return (
-      <div className="mt-7 fixed right-14">
+      <div className="mt-7 md:fixed md:right-12 md:inline-block hidden">
         <h3 className="text-xl font-bold">
           ❮❯ by{" "}
           <a
@@ -23,7 +22,7 @@ export default function SideBarRight() {
   }
 
   return (
-    <div className="mt-7 fixed right-12">
+    <div className="mt-7 mb-10 md:fixed md:right-12">
       <h3 className="text-xl font-bold">On this page</h3>
       <ul className="mt-6">
         {pageNav.map((p, i) => {

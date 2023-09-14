@@ -12,16 +12,20 @@ import PostmanPage from "./pages/PostmanPage";
 
 function App() {
   return (
-    <div className="mx-16 my-8">
+    <div className="md:mx-16 mx-5 my-8">
       <Router>
         <div className="relative">
           <Header />
         </div>
         <div className="flex mt-28">
-          <div className="w-1/4">
+          <div className="md:w-1/4">
             <SideBarLeft />
           </div>
-          <main className="w-1/2 flex flex-col">
+          
+          <main className="md:w-1/2 w-full flex flex-col">
+          <div className="lg:hidden">
+            <SideBarRight />
+          </div>
             <Routes>
               <Route path="/" element={<IntroductionPage />} />
               <Route path="/lomitos" element={<LomitosPage />} />
@@ -30,7 +34,7 @@ function App() {
               <Route path="/postman" element={<PostmanPage />} />
             </Routes>
           </main>
-          <div className="w-1/4 relative">
+          <div className="w-1/4 relative md:inline-block hidden">
             <SideBarRight />
           </div>
         </div>

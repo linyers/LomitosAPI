@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "aad47ddc-d84b-41a7-babf-fe45d7223421",
+		"name": "Lomitos API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26928591"
+	},
+	"item": [
+		{
+			"name": "Lomitos",
+			"item": [
+				{
+					"name": "createJson",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MzI5MDY5LCJpYXQiOjE2OTQ2MDA0NjQsImp0aSI6IjFlYjRmZDgzMzYwYTQzN2M4ZGJjMjBiYzAzYTdmYTA1IiwidXNlcl9pZCI6IjQzYjkxN2M5LWQ1NDctNGNjZS05NjRjLTk4YjNjZTdmNmI2NyIsImVtYWlsIjoiaGVsb3cxMjcyMEBzZXN4ZS5jb20ifQ.LBvF_XyUE8BwaqEhgVPjVZ7zsq9SIOOoIhbvoFxafDE"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pepi\",\r\n    \"phone\": \"0385 666-1234\",\r\n    \"maps\": \"https://www.google.com/maps/@-27.7849383,-64.258345,3a,75y,220.68h,84.23t/data=!3m6!1e1!3m4!1sWG_p7LGD4Mam8D7-hWz6yQ!2e0!7i16384!8i8192?entry=ttu\",\r\n    \"logo\": null,\r\n    \"rating\": {\r\n        \"rate\": \"5\",\r\n        \"reviews\": 666\r\n    },\r\n    \"day_time\": {\r\n        \"sunday\": null,\r\n        \"monday\": null,\r\n        \"tuesday\": null,\r\n        \"thursday\": null,\r\n        \"wednesday\": null,\r\n        \"friday\": null,\r\n        \"saturday\": null\r\n    },\r\n    \"night_time\": {\r\n        \"sunday\": null,\r\n        \"monday\": null,\r\n        \"tuesday\": null,\r\n        \"thursday\": null,\r\n        \"wednesday\": null,\r\n        \"friday\": null,\r\n        \"saturday\": null\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lomitosapi.com.ar/api/lomitos/"
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://lomitosapi.com.ar/api/lomitos/"
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://lomitosapi.com.ar/api/lomitos/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "createForm",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MzI5MDY5LCJpYXQiOjE2OTQ2MDA0NjQsImp0aSI6IjFlYjRmZDgzMzYwYTQzN2M4ZGJjMjBiYzAzYTdmYTA1IiwidXNlcl9pZCI6IjQzYjkxN2M5LWQ1NDctNGNjZS05NjRjLTk4YjNjZTdmNmI2NyIsImVtYWlsIjoiaGVsb3cxMjcyMEBzZXN4ZS5jb20ifQ.LBvF_XyUE8BwaqEhgVPjVZ7zsq9SIOOoIhbvoFxafDE"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Pepi",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "maps",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": "https://lomitosapi.com.ar/api/lomitos/"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MzI5MDY5LCJpYXQiOjE2OTQ2MDA0NjQsImp0aSI6IjFlYjRmZDgzMzYwYTQzN2M4ZGJjMjBiYzAzYTdmYTA1IiwidXNlcl9pZCI6IjQzYjkxN2M5LWQ1NDctNGNjZS05NjRjLTk4YjNjZTdmNmI2NyIsImVtYWlsIjoiaGVsb3cxMjcyMEBzZXN4ZS5jb20ifQ.LBvF_XyUE8BwaqEhgVPjVZ7zsq9SIOOoIhbvoFxafDE"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "https://lomitosapi.com.ar/api/lomitos/124/"
+					},
+					"response": []
+				},
+				{
+					"name": "pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://lomitosapi.com.ar/api/lomitos/?p=2",
+							"protocol": "https",
+							"host": [
+								"lomitosapi",
+								"com",
+								"ar"
+							],
+							"path": [
+								"api",
+								"lomitos",
+								""
+							],
+							"query": [
+								{
+									"key": "p",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateJson",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pepi\",\r\n    \"phone\": \"0385 666-1234\",\r\n    \"maps\": \"https://www.google.com/maps/@-27.7849383,-64.258345,3a,75y,220.68h,84.23t/data=!3m6!1e1!3m4!1sWG_p7LGD4Mam8D7-hWz6yQ!2e0!7i16384!8i8192?entry=ttu\",\r\n    \"logo\": null,\r\n    \"rating\": {\r\n        \"rate\": \"5\",\r\n        \"reviews\": 666\r\n    },\r\n    \"day_time\": {\r\n        \"sunday\": null,\r\n        \"monday\": null,\r\n        \"tuesday\": null,\r\n        \"thursday\": null,\r\n        \"wednesday\": null,\r\n        \"friday\": null,\r\n        \"saturday\": null\r\n    },\r\n    \"night_time\": {\r\n        \"sunday\": null,\r\n        \"monday\": null,\r\n        \"tuesday\": null,\r\n        \"thursday\": null,\r\n        \"wednesday\": null,\r\n        \"friday\": null,\r\n        \"saturday\": null\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lomitosapi.com.ar/api/lomitos/122/"
+					},
+					"response": []
+				},
+				{
+					"name": "updateForm",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "maps",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": "https://lomitosapi.com.ar/api/lomitos/121/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "changePassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"danzing@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lomitosapi.com.ar/api/auth/change-password/"
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"danzing@example.com\",\r\n    \"password\": \"123456asdfg\",\r\n    \"repeat_password\": \"123456asdfg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lomitosapi.com.ar/api/auth/signup/"
+					},
+					"response": []
+				},
+				{
+					"name": "getTokens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"danzing@example.com\",\r\n    \"password\": \"123456asdfg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lomitosapi.com.ar/api/auth/login/"
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MzI5MDY5LCJpYXQiOjE2OTQ2MDA0NjQsImp0aSI6IjFlYjRmZDgzMzYwYTQzN2M4ZGJjMjBiYzAzYTdmYTA1IiwidXNlcl9pZCI6IjQzYjkxN2M5LWQ1NDctNGNjZS05NjRjLTk4YjNjZTdmNmI2NyIsImVtYWlsIjoiaGVsb3cxMjcyMEBzZXN4ZS5jb20ifQ.LBvF_XyUE8BwaqEhgVPjVZ7zsq9SIOOoIhbvoFxafDE"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://lomitosapi.com.ar/api/auth/user/"
+					},
+					"response": []
+				},
+				{
+					"name": "getAccessToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NDY0MDA2NCwiaWF0IjoxNjk0NjAwNDY0LCJqdGkiOiJkMTYwOGE4Zjk1NTc0ODdlODg2ODZiODBlZGY0Mjk4ZCIsInVzZXJfaWQiOiI0M2I5MTdjOS1kNTQ3LTRjY2UtOTY0Yy05OGIzY2U3ZjZiNjciLCJlbWFpbCI6ImhlbG93MTI3MjBAc2VzeGUuY29tIn0.C5cL5HcjgJBUCRJwpa8VCTNKeKpzsaxicYaHC8o2B3U\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lomitosapi.com.ar/api/auth/token/refresh/"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

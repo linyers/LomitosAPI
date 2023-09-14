@@ -4,6 +4,7 @@ import ApiEndpoint from "../components/ApiEndpoint";
 import LomitoSchema from "../components/LomitoSchema";
 import RatingSchema from "../components/RatingSchema";
 import TimeSchema from "../components/TimeSchema";
+import SideBarRight from '../components/SideBarRight'
 
 export default function LomitosPage() {
   const { setPageNav } = useContext(PathsContext);
