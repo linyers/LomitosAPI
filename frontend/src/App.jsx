@@ -34,6 +34,7 @@ function App() {
               <Route path="/postman" element={<PostmanPage />} />
             </Routes>
           </main>
+          
           <div className="w-1/4 relative md:inline-block hidden">
             <SideBarRight />
           </div>
